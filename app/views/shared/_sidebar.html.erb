@@ -1,0 +1,142 @@
+<!-- Filter Categories -->
+<div class="accordion" id="accordion-main-category">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <%= link_to 'Category', '#collapse-categories',
+                               class: "accordion-toggle main-cat",
+                               data: { toggle: 'collapse',
+                                       parent: '#accordion-main-categories' } %>
+       <%= link_to '#collapse-categories',
+                  class: 'accordion-toggle collapse-button',
+                  data: {toggle: 'collapse', parent: '#accordion-main-categories' } do %>
+        <% content_tag(:i, '', class: 'caret') %>
+      <% end %>
+    </div>
+    <div id="collapse-categories" class="acordion-body collapse">
+      <div class="accordion-inner">
+        <!-- Sub category -->
+        <div class="accordion" id="accordion-sub-category">
+          <% unless @main_category.nil? %>
+            <% @main_category.each do |mc| %>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <%= link_to mc.name, '#',
+                                              class: "accordion-toggle",
+                                              data: { toggle: 'collapse',
+                                                      parent: '#accordion-sub-category'} %>
+                 <%= link_to "#collapse-category-#{mc.id}",
+                            class: "accordion-toggle collapse-button",
+                            data: { toggle: "collapse", 
+                                    parent: "#accordion-sub-category"} do %>
+                    <% content_tag(:i, '', class: 'caret') %>
+                <% end %>
+                </div>
+                <div id="<%= "collapse-category-#{mc.id}"%>" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <% if @categories[mc.id] != nil %>
+                      <% @categories[mc.id].each do |cat| %>
+                        <p id="<%= "sub-cat-#{cat.id}"%>">
+                          <%= cat.name %>
+                        </p>
+                      <% end %>
+                    <% else %>
+                      <p>Record not found</p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Filter Ages -->
+<div class="accordion" id="accordion-ages">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <%= link_to 'Ages', '#collapse-age', class: "accordion-toggle ages-accordion", 
+                                           data: { toggle: "collapse", 
+                                                   parent: "#accordion-ages"} %>
+      <%= link_to "#collapse-age",
+                class: "accordion-toggle collapse-button",
+                data: { toggle: "collapse", 
+                        parent: "#accordion-ages"} do %>
+        <% content_tag(:i, '', class: 'caret') %>
+      <% end %>
+    </div>
+    <div id="collapse-age" class="accordion-body collapse">
+       <div class="accordion-inner ages-inner">
+        <% unless @ages.nil? %>
+          <% @ages.each do |age|%>
+            <p class="ages" id="<%= "age-#{age.id}" %>">
+              <%= age.name %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Date -->
+<div class="accordion" id="accordion-dates">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <%= link_to 'Date', '#collapse-date', class: "accordion-toggle date-accordion", 
+                                           data: { toggle: "collapse", 
+                                                   parent: "#accordion-dates"} %>
+      <%= link_to "#collapse-date",
+                class: "accordion-toggle collapse-button",
+                data: { toggle: "collapse", 
+                        parent: "#accordion-dates"} do %>
+        <% content_tag(:i, '', class: 'caret') %>
+      <% end %>
+    </div>
+    <div id="collapse-date" class="accordion-body collapse">
+      <div class="accordion-inner date-inner">
+        <% unless @dates.nil? %>
+          <% @dates.each_with_index do |value, index|%>
+            <p class="date" id="<%= "date-#{index}" %>">
+              <%= value %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Filter Payment -->
+<div class="pagination payment">
+  <ul>
+    <li class="active" data-type='all'>
+      <%= link_to 'ALL', 'javascript:void(0)' %>
+    </li>
+    <li data-type='free'>
+      <%= link_to 'FREE', 'javascript:void(0)' %>
+    </li>
+    <li data-type='paid'>
+      <%= link_to 'PAID', 'javascript:void(0)' %>
+    </li>
+  </ul>
+</div>
+
+<!--Filter Places -->
+<div class="pagination type">
+  <ul>
+    <li class="active" data-type='all'>
+      <%= link_to 'ALL', 'javascript:void(0)' %>
+    </li>
+    <li data-type='place'>
+      <%= link_to 'PLACES', 'javascript:void(0)' %>
+    </li>
+    <li data-type='event'>
+      <%= link_to 'EVENTS', 'javascript:void(0)' %>
+    </li>
+  </ul>
+</div>

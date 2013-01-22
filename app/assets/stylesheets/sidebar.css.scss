@@ -1,0 +1,55 @@
+.sidebar {
+  float: left;
+  padding: 20px 0 20px;
+  max-width: 250px;
+  .nav {
+    width: 210px;
+    padding: 0 20px;
+    overflow-y: auto;
+    height: 100%;
+
+    .accordion-heading {
+      position: relative;
+      overflow: hidden;
+
+      .main-cat, .ages-accordion, .date-accordion {
+        float: left;
+        padding-right: 0;
+      }
+      .collapse-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-left: 1px solid #E5E5E5;
+        padding: 18px 10px 14px 10px;
+        .caret{
+          float: right;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    #accordion-sub-category .accordion-inner, .ages-inner, .date-inner {
+      padding: 0;
+      p {
+        cursor: pointer;
+        padding: 10px;
+        margin: 0;
+      }
+      p:hover {
+        background-color: #E5E5E5;
+      }
+    }
+  }
+  .pagination {
+    width: 210px;
+  }
+  
+  .footer {
+    padding: 20px 20px 0;
+    font-size: 14px;
+    .copirights {
+      font-size: 10px;
+    }
+  }
+}
