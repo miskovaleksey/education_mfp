@@ -6,6 +6,7 @@ class SessionController < ApplicationController
     
   end
 
+  
   # post
   def create
     

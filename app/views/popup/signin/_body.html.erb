@@ -3,5 +3,9 @@
   <%= link_to '', '', id: "tw" %>
 </div>
 <p>or</p>
+<%= simple_form_for(:session, :url => aut_path) do |f| %>
+<%= f.input :name, :required => false %>
+<%= f.button :submit %>
+<% end %>
 
  
