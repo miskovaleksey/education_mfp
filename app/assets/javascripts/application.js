@@ -20,6 +20,7 @@
 
 // Aplication
 //= refresh_size
+//= popup
 //= map
 //= require_tree .
 

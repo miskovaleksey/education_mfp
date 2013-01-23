@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-
+gem 'simple_form', '~> 2.0.4'
 gem 'mysql2', '~> 0.3.11'
-
+gem 'devise', '~> 2.2.2'
 
 
 # Gems used only for assets and not required

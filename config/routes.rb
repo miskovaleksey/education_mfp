@@ -1,8 +1,13 @@
 MfpEducation::Application.routes.draw do
 
+  get "users/new"
+  post "users/create"
+
+  resources :session, :only => [:new, :create, :destroy]
+
   get 'about'   => 'pages#about',    as: 'about'
   get 'contact' => 'pages#contact',  as: 'contact'
-  get 'signin'  => 'session#signin', as: 'signin'
+  get 'signin'  => 'session#new',    as: 'signin'
   
   root to: 'maps#index'
 end
