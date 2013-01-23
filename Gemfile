@@ -1,28 +1,28 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.11'
 
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 3.2.6'
+  gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.0.3' # JavaScript compressor.
   gem 'therubyracer', '~> 0.10.2', platforms: :ruby
   gem 'less-rails', '~> 2.2.6'
-  gem 'twitter-bootstrap-rails', '~> 2.1.8'
+  gem 'twitter-bootstrap-rails', '~> 2.2.0'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.2.0'
 
 
 group :development do
-  gem 'thin'
-  gem 'quiet_assets'
+  gem 'thin', '~> 1.5.0'
+  gem 'quiet_assets', '~> 1.0.1'
   gem 'mina', '~> 0.2.1'
 end
 
