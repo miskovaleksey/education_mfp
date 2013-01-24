@@ -3,9 +3,8 @@
   <%= link_to '', '', id: "tw" %>
 </div>
 <p>or</p>
-<%= simple_form_for(:session, :url => aut_path) do |f| %>
-<%= f.input :name, :required => false %>
-<%= f.button :submit %>
+<%= simple_form_for(:session, :url => sessions_path) do |f| %>
+  <%= f.input :email, required: false %>
+  <%= f.input :password, required: false %>
+  <%= f.submit "Sign In" %>
 <% end %>
-
- 

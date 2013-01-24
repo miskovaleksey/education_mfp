@@ -3,9 +3,11 @@ MfpEducation::Application.routes.draw do
   get "users/new"
   post "users/create"
 
-  resources :session, :only => [:new, :create, :destroy]
-  get 'signin'  => 'session#new',    as: 'signin'
-  post 'aut' => 'session#create', as:'aut'
+  resources :sessions, :only => [:new, :create, :destroy]
+  get '/signin'  => 'sessions#new',    as: 'signin'
+
+  resources :users
+  get '/signup' => 'users#new', as: 'signup'
 
   get 'about'   => 'pages#about',    as: 'about'
   get 'contact' => 'pages#contact',  as: 'contact'
